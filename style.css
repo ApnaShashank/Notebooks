@@ -1,0 +1,519 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgb(206, 225, 244);
+}
+
+.about-title {
+	font-size: 7.5rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: -0.02em;
+	position: absolute;
+	top: 45px;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	white-space: nowrap;
+	font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+	background: linear-gradient(
+		to bottom,
+		rgb(8 42 123 / 35%) 30%,
+		rgb(255 255 255 / 0%) 76%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.carousel-container {
+	width: 100%;
+	max-width: 1200px;
+	height: 450px;
+	position: relative;
+	perspective: 1000px;
+	margin-top: 80px;
+}
+
+.carousel-track {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card {
+	position: absolute;
+	width: 280px;
+	height: 380px;
+	background: white;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+	transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	cursor: pointer;
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card.center {
+	z-index: 10;
+	transform: scale(1.1) translateZ(0);
+}
+
+.card.center img {
+	filter: none;
+}
+
+.card.left-2 {
+	z-index: 1;
+	transform: translateX(-400px) scale(0.8) translateZ(-300px);
+	opacity: 0.7;
+}
+
+.card.left-2 img {
+	filter: grayscale(100%);
+}
+
+.card.left-1 {
+	z-index: 5;
+	transform: translateX(-200px) scale(0.9) translateZ(-100px);
+	opacity: 0.9;
+}
+
+.card.left-1 img {
+	filter: grayscale(100%);
+}
+
+.card.right-1 {
+	z-index: 5;
+	transform: translateX(200px) scale(0.9) translateZ(-100px);
+	opacity: 0.9;
+}
+
+.card.right-1 img {
+	filter: grayscale(100%);
+}
+
+.card.right-2 {
+	z-index: 1;
+	transform: translateX(400px) scale(0.8) translateZ(-300px);
+	opacity: 0.7;
+}
+
+.card.right-2 img {
+	filter: grayscale(100%);
+}
+
+.card.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.member-info {
+	text-align: center;
+	margin-top: 40px;
+	transition: all 0.5s ease-out;
+}
+
+.member-name {
+	color: rgb(8, 42, 123);
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+	position: relative;
+	display: inline-block;
+}
+
+.member-name::before,
+.member-name::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	width: 100px;
+	height: 2px;
+	background: rgb(8, 42, 123);
+}
+
+.member-name::before {
+	left: -120px;
+}
+
+.member-name::after {
+	right: -120px;
+}
+
+.member-role {
+	color: #848696;
+	font-size: 1.5rem;
+	font-weight: 500;
+	opacity: 0.8;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	padding: 10px 0;
+	margin-top: -15px;
+	position: relative;
+}
+.dots {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 60px;
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: rgba(8, 42, 123, 0.2);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.dot.active {
+	background: rgb(8, 42, 123);
+	transform: scale(1.2);
+}
+
+.nav-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(8, 42, 123, 0.6);
+	color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 20;
+	transition: all 0.3s ease;
+	font-size: 1.5rem;
+	border: none;
+	outline: none;
+	padding-bottom: 4px;
+}
+
+.nav-arrow:hover {
+	background: rgba(0, 0, 0, 0.8);
+	transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow.left {
+	left: 20px;
+	padding-right: 3px;
+}
+
+.nav-arrow.right {
+	right: 20px;
+	padding-left: 3px;
+}
+
+@media (max-width: 768px) {
+	.about-title {
+		font-size: 4.5rem;
+	}
+
+	.card {
+		width: 200px;
+		height: 280px;
+	}
+
+	.card.left-2 {
+		transform: translateX(-250px) scale(0.8) translateZ(-300px);
+	}
+
+	.card.left-1 {
+		transform: translateX(-120px) scale(0.9) translateZ(-100px);
+	}
+
+	.card.right-1 {
+		transform: translateX(120px) scale(0.9) translateZ(-100px);
+	}
+
+	.card.right-2 {
+		transform: translateX(250px) scale(0.8) translateZ(-300px);
+	}
+
+	.member-name {
+		font-size: 2rem;
+	}
+
+	.member-role {
+		font-size: 1.2rem;
+	}
+
+	.member-name::before,
+	.member-name::after {
+		width: 50px;
+	}
+
+	.member-name::before {
+		left: -70px;
+	}
+
+	.member-name::after {
+		right: -70px;
+	}
+}
+
+/* --- New CSS join --- */
+.products-section {
+    width: 100%;
+    background-color: rgb(206, 225, 244);
+    padding-top: 50px; 
+    margin-top: 50px; 
+}
+
+.products-section h1 {
+    margin: 0;
+    padding: 10%;
+    font-size: 110px;
+    text-transform: capitalize;
+    background-image: url(https://www.elegantthemes.com/blog/wp-content/uploads/2020/11/themeisle-icons.png);
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 12px 1px 2px;
+}
+
+.products-section h2 {
+    padding-top: 10%;
+    padding-left: 8%;
+    font-size: 30px;
+    color: #333; 
+}
+
+.products-section > p:not(#hi) {
+    padding-left: 8%;
+    padding-right: 3%;
+    text-align: justify;
+    padding-top: 1%;
+    font-size: 1rem;
+    color: #444; 
+}
+
+.products-section #hi {
+    position: sticky;
+    top: 0;
+    padding: 15px 8%;
+    background-color: #1b1b1b;
+    border: 2px solid #1a1b1a;
+    text-align: left;
+    font-size: 25px;
+    border-radius: 5px;
+    z-index: 50; 
+}
+
+.products-section #hi a {
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+    background-color: #1b1b1b;
+    padding-right: 3%;   
+}
+
+/* --- Explosive Text Effect Styles --- */
+.explosive-text {
+  font-weight: bold;
+  color: #1b1b1b; /* Dark color for text to be visible on the light blue background */
+  font-size: 1.5rem; /* Adjusted font size for better fit */
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.explosive-text:hover {
+    color: #ED5565; /* A contrasting color on hover */
+}
+
+/* This will style each individual letter */
+.explosive-text span {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.7, 0, 0.25, 1), opacity 0.5s;
+}
+
+/* This class triggers the explosion */
+.explosive-text.explode span {
+  opacity: 0;
+}
+
+/* --- footer yaha se hai --- */
+.footer {
+    width: 100%;
+    margin-top: 100px; 
+    z-index: 1;
+    --footer-background: #ED5565;
+    display: grid;
+    position: relative;
+    min-height: 12rem;
+}
+
+.footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+}
+
+.footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+               bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+}
+
+.footer .content {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
+    padding: 2rem;
+    background: var(--footer-background);
+}
+
+.footer .content a,
+.footer .content p {
+    color: #F5F7FA;
+    text-decoration: none;
+}
+
+.footer .content b {
+    color: white;
+}
+
+.footer .content p {
+    margin: 0;
+    font-size: .75rem;
+}
+
+.footer .content > div {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.footer .content > div > div {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 1.5rem; 
+}
+
+.footer .content > div > div > * {
+    margin: 0.25rem 0; 
+}
+
+.footer .content .image {
+    align-self: center;
+    width: 100px;
+    height: 100px;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+@keyframes bubble-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+/* --- NOTEBOOKS टेक्स्ट के लिए लिक्विड मॉर्फ इफ़ेक्ट --- */
+
+/* यह टेक्स्ट के पीछे घूमने वाली दो बूंदें (blobs) बनाता है */
+.products-section h1::before,
+.products-section h1::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: -1; /* यह बूंदों को टेक्स्ट के पीछे रखता है */
+    mix-blend-mode: multiply; /* रंगों को अच्छे से मिलाता है */
+}
+
+/* पहली बूंद (गुलाबी) */
+.products-section h1::before {
+    background: #ED5565; /* आपके फूटर से मिलता हुआ रंग */
+    animation: liquid-move 12s linear infinite;
+}
+
+/* दूसरी बूंद (नीला) */
+.products-section h1::after {
+    background: #57caf4; /* वेबसाइट की थीम से मिलता हुआ नीला रंग */
+    animation: liquid-move 12s linear infinite;
+    animation-delay: -6s; /* ताकि दोनों बूंदें अलग-अलग घूमें */
+    animation-direction: reverse;
+}
+
+/* Hover करने पर इफ़ेक्ट */
+.products-section h1:hover::before,
+.products-section h1:hover::after {
+    background: #76c900; /* Hover पर हरा रंग */
+    animation-duration: 4s; /* एनीमेशन की स्पीड तेज हो जाएगी */
+}
+
+/* बूंदों को घुमाने के लिए कीफ्रेम (Keyframes) */
+@keyframes liquid-move {
+    0%, 100% {
+        transform: translate(-50%, -50%) translate(-150px, 0);
+    }
+    25% {
+        transform: translate(-50%, -50%) translate(0, -120px) scale(0.8);
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(150px, 0);
+    }
+    75% {
+        transform: translate(-50%, -50%) translate(0, 120px) scale(1.2);
+    }
+}

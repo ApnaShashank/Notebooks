@@ -1,0 +1,77 @@
+/* black  #111;
+white  #ddd;
+green  #44bd32; */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://i.postimg.cc/nrLqvd9J/bg.png") no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+
+}
+
+#contact {
+    padding: 40px 0;
+
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    .border {
+        width: 100px;
+        margin: 30px auto;
+        height: 5px;
+        background: green;
+    }
+
+    .contact-form {
+        max-width: 600px;
+        margin: auto;
+        padding: 0 10px;
+
+        .contact-form-text {
+            display: block;
+            width: 100%;
+            margin: 15px 0;
+            padding: 20px 40px;
+            background: black;
+            outline: none;
+            border: none;
+            color: white;
+
+            &:hover {
+                border: 1px solid green;
+            }
+        }
+
+        textarea.contact-form-text {
+            height: 120px;
+            overflow: scroll;
+        }
+
+        .btn {
+            float: right;
+            border: 0;
+            outline: 0;
+            background: green;
+            padding: 10px 50px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+
+            &:hover {
+                background: darken(green, 10%);
+            }
+
+        }
+    }
+}

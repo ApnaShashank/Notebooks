@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="about-title">OUR NOTES</h1>
+
+    <div class="carousel-container">
+        <button class="nav-arrow left">‹</button>
+        <div class="carousel-track">
+            <div class="card" data-index="0">
+                <img src="html.png" alt="Html Notes">
+            </div>
+            <div class="card" data-index="1">
+                <img src="css.png" alt="CSS Notes">
+            </div>
+            <div class="card" data-index="2">
+                <img src="js.png" alt="JS Notes">
+            </div>
+            <div class="card" data-index="3">
+                <img src="python.png" alt="Python Notes">
+            </div>
+            <div class="card" data-index="4">
+                <img src="c.png" alt="C Notes">
+            </div>
+            <div class="card" data-index="5">
+                <img src="c++.png" alt="C++ Notes">
+            </div>
+        </div>
+        <button class="nav-arrow right">›</button>
+    </div>
+
+    <div class="member-info">
+        <h2 class="member-name">HTML</h2>
+        <p class="member-role">Structure</p>
+    </div>
+
+    <div class="dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+        <div class="dot" data-index="4"></div>
+        <div class="dot" data-index="5"></div>
+    </div>
+
+    <div class="products-section">
+        <h1 align="center">NOTEBOOKS</h1>
+        <p id="hi">
+            <a href="index.html" class="explosive-text">House</a>
+            <a href="notes.html" class="explosive-text">Notes</a>
+            <a href="game_page.html" class="explosive-text">Games</a>
+            <a href="about.html" class="explosive-text">About</a>
+            <a href="contact.html" class="explosive-text">Contact</a>
+            <a href="progress.html" class="explosive-text">Progress</a>
+        </p>
+        <h2 id="html-section">HTML</h2>
+        <p>Learn HTML <br>
+            HTML is the standard markup language for Web pages. <br>
+            With HTML you can create your own Website. <br>
+            HTML is easy to learn - You will enjoy it!</p>
+        <h2 id="css-section">CSS</h2>
+        <p>Learn CSS <br>
+            CSS is the language we use to style an HTML document. <br>
+            CSS describes how HTML elements should be displayed. <br>
+            This tutorial will teach you CSS from basic to advanced.</p>
+        <h2 id="js-section">JAVA SCRIPT</h2>
+        <p>Learn JavaScript <br>
+            JavaScript is the world's most popular programming language. <br>
+            JavaScript is the programming language of the Web. <br>
+            JavaScript is easy to learn.
+            This tutorial will teach you JavaScript from basic to advanced.</p>
+        <h2 id="python-section">PYTHON</h2>
+        <p>Learn Python <br>
+            Python is a popular programming language. <br>
+            Python can be used on a server to create web applications.
+        </p>
+        <h2 id="c-section">C</h2>
+        <p>Learn C <br>
+            C is a general-purpose programming language that has been widely used for over 50 years.
+            C is very powerful; it has been used to develop operating systems, databases, applications, etc.</p>
+        <h2 id="cpp-section">C++</h2>
+        <p>Learn C++
+            C++ is a popular programming language. <br>
+            C++ is used to create computer programs, and is one of the most used language in game development. <br>
+            C++ was developed as an extension of C, and both languages have almost the same syntax.</p>
+    </div>
+
+    <footer class="footer">
+        <div class="bubbles">
+        </div>
+        <div class="content">
+            <div>
+                <div>
+                    <b>Notes</b>
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">JAVASCRIPT</a>
+                </div>
+                <div>
+                    <b>GAMES</b>
+                    <a href="#">ZOPE</a>
+                    <a href="#">LENTIK</a>
+                    <a href="#">SUNFHIYA</a>
+                </div>
+                <div>
+                    <b>NEW</b>
+                    <a href="#">NONE</a>
+                    <a href="#">NONE</a>
+                    <a href="#">NONE</a>
+                </div>
+                <div>
+                    <b>OTHER</b>
+                    <a href="#">WAIT</a>
+                    <a href="#">WAIT</a>
+                    <a href="#">WAIT</a>
+                </div>
+            </div>
+            <div>
+                <a class="image" href="https://codepen.io/z-" target="_blank"
+                    style="background-image: url('logo.png')"></a>
+                <p>©2025 Shashank</p>
+            </div>
+        </div>
+    </footer>
+
+    <svg style="position:fixed; top:100vh; pointer-events:none;">
+        <defs>
+            <filter id="blob">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="blob" />
+            </filter>
+            
+            <filter id="liquid-morph">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+        </defs>
+    </svg>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

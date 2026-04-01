@@ -1,0 +1,125 @@
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em #b18be4;
+}
+
+
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #ef6eae; }
+}
+
+
+.close:hover,
+.close:focus {
+  box-shadow: 
+    inset -3.5em 0 0 0 #ffb3b7,
+    inset 3.5em 0 0 0 #ffb3b7;  
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #ffd49a;
+  transform: translateY(-0.25em);
+}
+
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 #f7e9a3;
+}
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 #a6e6a1;
+}
+
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 #19bc8b,
+    inset 0.3em 0.3em 0 0 #19bc8b;
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 #1ee6a7,
+      inset 6em 3.5em 0 0 #1ee6a7;
+  }
+}
+
+/* Button color classes */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.fill {
+  --color: #a972cb;
+  --hover: #b18be4;
+}
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef6eae;
+}
+.close {
+  --color: #ff7f82;
+  --hover: #ffb3b7;
+}
+.raise {
+  --color: #ffa260;
+  --hover: #ffd49a;
+}
+.up {
+  --color: #e4cb58;
+  --hover: #f7e9a3;
+}
+.slide {
+  --color: #8fc866;
+  --hover: #a6e6a1;
+}
+.offset {
+  --color: #19bc8b;
+  --hover: #1ee6a7;
+}
+
+button {  
+  color: var(--color);
+  transition: 0.25s;
+}
+button:hover,
+button:focus { 
+  border-color: var(--hover);
+  color: #fff;
+}
+
+body {
+  color: #fff;
+  background: hsl(227, 10%, 10%);
+  font: 300 1em 'Fira Sans', sans-serif;
+  
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 { font-weight: 400; }
+
+code { 
+  color: #e4cb58;
+  font: inherit;
+}
